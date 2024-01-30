@@ -16,7 +16,7 @@ class handler(BaseHTTPRequestHandler):
             data = response.json()
             country = data[0]
             capital_city = country["capital"][0]
-            message = f"The capital of {country['name']['common']} is {capital_city} is"
+            message = f"The capital of {country['name']['common']} is {capital_city}"
         elif "capital" in dictionary:
             response = requests.get(
                 f'https://restcountries.com/v3.1/capital/{dictionary["capital"]}?fields=name,capital'
