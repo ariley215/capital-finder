@@ -7,7 +7,7 @@ class handler(BaseHTTPRequestHandler):
     def do_GET(self):
         path = self.path
         url_components = parse.urlsplit(path)
-        query_string_list = parse.parse.qsl(url_components.query)
+        query_string_list = parse.parse_qsl(url_components.query)
         dictionary = dict(query_string_list)
 
         if "country" in dictionary:
