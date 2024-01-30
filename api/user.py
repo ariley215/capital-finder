@@ -22,8 +22,8 @@ class handler(BaseHTTPRequestHandler):
                 f'https://restcountries.com/v3.1/capital/{dictionary["capital"]}?fields=name,capital'
             )
             capitals_response = response.json()
-            capital = capitals_response[0]
-            capital_country = capital["name"][0]["common"]
+            capital = capitals_response[0]["capital"][0]
+            capital_country = capitals_response[0]["name"]["common"]
             message = f"{capital} is the capital of {capital_country}"
 
         else:
